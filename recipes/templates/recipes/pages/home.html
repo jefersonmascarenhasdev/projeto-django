@@ -1,16 +1,24 @@
-{% include 'recipes/partials/head.html' %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  {% include 'recipes/partials/head.html' %}
+</head>
 <body>
   {% include 'recipes/partials/header.html' %}
+  {% include 'recipes/partials/search.html' %}
 
-  <div class="search-container">
-    <div class="container">
-      <form action="" class="search-form">
-        <input type="search" class="search-input" name="search" placeholder="Buscar receitas...">
-        <button type="submit" class="search-button">
-          <i class="fas fa-search" aria-hidden="true"></i>
-        </button>
-      </form>
+  <main class="main-content-container">
+    <div class="main-content main-content-list container">
+      <div class="recipe recipe-list-item">
+        <div class="recipe-cover">
+          <img 
+            src="https://placehold.co/600x400/png" 
+            alt="Imagem temporária da receita"
+          >
+        </div>
+        <h1>oi</h1>
+      </div>
     </div>
-  </div>
+  </main>
 </body>
 </html>

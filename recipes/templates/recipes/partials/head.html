@@ -11,10 +11,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAI4UksYuRlRrQJ5XewyXK2f3Z57CZ+n6U8zCjYyH1zYw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
     <!-- CSS Externo com Subresource Integrity -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-tk4nGrLxft4l30r9ETuejLU0a3d7LwMzj0eXjzc16JQj+5U1IeVoCuGLObRDc3+eQMUcEQY1RIDPGvuA7SNQ2w==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
-
     <style>
          :root {
             --color-primary: #269fe6;
@@ -90,7 +93,7 @@
         }
         
         .main-logo {
-            font-size: 3rem;
+            font-size: 2rem;
             color: var(--color-white);
             text-decoration: none;
             display: flex;
@@ -102,7 +105,7 @@
         }
         
         .main-logo-icon {
-            margin-right: 2rem;
+            margin-right: 1rem;
         }
         
         .search-form {
@@ -120,19 +123,66 @@
         
         .search-input,
         .search-button {
-            font-size: 1.6rem;
+            font-size: 2rem;
             padding: 1rem 2rem;
             border: none;
             outline: none;
             background: none;
         }
         
+        .search-input {
+            width: 100%;
+            padding-right: 2rem;
+        }
+        
         .search-button {
             background: var(--color-primary);
             color: var(--color-white);
             cursor: pointer;
-            border-radius: 0 0.5rem 0.5rem 0;
+            border-radius: 0 0.2rem 0.2rem 0;
             transition: background 0.3s ease;
+        }
+        
+        .search-form::focus-within {
+            border-color: var(--color-primary);
+        }
+        
+        .search-form::focus-within .search-button {
+            border-color: var(--color-primary);
+        }
+        
+        .main-content {
+            padding-top: 0;
+        }
+        
+        .main-content-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: var(--spacing-gutter-large);
+        }
+        
+        .recipe {
+            background: var(--color-white);
+            border-radius: 0.5rem;
+            box-shadow: -5px 5px 15px rgba(0, 0, 0, .4);
+            overflow: hidden;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .recipe img {
+            max-width: 100%;
+        }
+        
+        .recipe-list-item {
+            max-width: 64rem;
+        }
+        
+        .recipe-list-item:hover {
+            transform: scale(1.02);
+            transition: all 0.3s ease;
         }
     </style>
 </head>
