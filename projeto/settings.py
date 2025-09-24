@@ -115,7 +115,30 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+# URL para acessar os arquivos estáticos no navegador
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Pasta de destino onde collectstatic vai copiar todos os arquivos
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# Pastas estáticas do projeto
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # pasta estática global do projeto (opcional)
+    # Não inclua "staticfiles" aqui!
+]
+
+# Certifique-se de que cada app tem sua pasta static:
+# <app_name>/static/<app_name>/...
+
+
+
+
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
