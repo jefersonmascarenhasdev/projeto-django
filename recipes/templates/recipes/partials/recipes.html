@@ -7,33 +7,29 @@
           </div>
 
           <div class="recipe-title-container">
-            <h2 class="recipe-title">Filé de frango à parmegiana</h2>
+            <h2 class="recipe-title">{{recipe.title}}</h2>
           </div>
 
           <div class="recipe-author">
             <span class="recipe-author-item">
               <i class="fas fa-user"></i>
-              Jeferson Mascarenhas
+              {{ recipe.author.first_name }} {{ recipe.author.last_name }}
             </span>
             <span class="recipe-author-item">
               <i class="fas fa-calendar-alt"></i>
-              20/09/2025
+               {{ recipe.created_at|date:"d/m/Y" }} ás {{ recipe.created_at|date:"H:i" }}
             </span>
             <span class="recipe-author-item">
               <a href="/recipes/category/cafe-da-manha/">
                 <i class="fas fa-layer-group"></i>
-                <span>Almoço</span>
+                <span>{{recipe.category}}</span>
               </a>
             </span>
           </div>
 
           <div class="recipe-content">
             <p>
-              Prepare o clássico filé de frango à parmegiana sem estresse na
-              cozinha! O resultado é uma casquinha crocante, douradinha e
-              saborosa. O molho de tomate caseiro traz um toque de frescor para
-              o prato. Se utilizar o industrializado, escolha um de boa
-              qualidade e tempere-o bem.
+              {{ recipe.description }}
             </p>
           </div>
 
@@ -43,7 +39,7 @@
                 <i class="fas fa-stopwatch"></i> Tempo de preparo
               </h3>
               <div class="recipe-meta-text">
-                <span>10 min</span>
+                <span>{{recipe.servings}}{{recipe.preparation_time_unit}}</span>
               </div>
             </div>
 
@@ -52,7 +48,7 @@
                 <i class="fas fa-utensils"></i> Rendimento
               </h3>
               <div class="recipe-meta-text">
-                <span>6 porções</span>
+                <span>{{recipe.servings_unit}} porções </span>
               </div>
             </div>
           </div>
