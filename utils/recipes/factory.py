@@ -22,8 +22,8 @@ def make_recipe():
         'preparation_steps': fake.text(3000),
         'created_at': fake.date_time(),
         'author': {
-            'first_name': fake.first_name(),
-            'last_name': fake.last_name(),
+        'first_name': fake.first_name(),
+        'last_name': fake.last_name(),
         },
         'category': {
             'name': fake.word()
