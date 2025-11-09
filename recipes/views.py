@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from .models import Recipe
 from utils.recipes.factory import make_recipe
+
 
 
 
@@ -27,3 +29,10 @@ def recipe(request, id):
         "recipes": make_recipe(),
     }
     return render(request, "recipes/pages/recipe-view.html", context)
+def recipe_detail(request, id):
+    recipe = make_recipe()
+    recipe['id'] = id  # só pra manter coerência na URL
+    return render(request, 'recipes/pages/recipe-view.html', {
+        'recipe': recipe,
+        'is_detail_page': True,
+    })
