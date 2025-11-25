@@ -130,7 +130,8 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",  # pasta estática global do projeto (opcional)
     # Não inclua "staticfiles" aqui!
 ]
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Certifique-se de que cada app tem sua pasta static:
 # <app_name>/static/<app_name>/...
 
